@@ -151,6 +151,10 @@
             android:configChanges="keyboardHidden|orientation|locale|screenSize"
             android:label="Card Browser" />
         <activity
+            android:name="com.ichi2.anki.SmartwatchSettings"
+            android:configChanges="keyboardHidden|orientation|locale|screenSize"
+            android:label="Smartwatch settings" />
+        <activity
             android:name="com.ichi2.anki.Reviewer"
             android:configChanges="keyboardHidden|orientation|locale|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden" />

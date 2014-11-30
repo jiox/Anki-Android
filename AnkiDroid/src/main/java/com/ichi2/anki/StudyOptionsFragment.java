@@ -77,6 +77,7 @@ public class StudyOptionsFragment extends Fragment implements LoaderManager.Load
     private static final int BROWSE_CARDS = 3;
     private static final int STATISTICS = 4;
     private static final int DECK_OPTIONS = 5;
+    private static final int WATCH_OPTIONS = 5;
 
     /**
      * Constants for selecting which content view to display
@@ -146,6 +147,9 @@ public class StudyOptionsFragment extends Fragment implements LoaderManager.Load
             switch (v.getId()) {
                 case R.id.studyoptions_start:
                     openReviewer();
+                    return;
+                case R.id.studyoptions_startwatch:
+                    openWatchOptions();
                     return;
                 case R.id.studyoptions_custom:
                     showCustomStudyContextMenu();
@@ -294,6 +298,12 @@ public class StudyOptionsFragment extends Fragment implements LoaderManager.Load
         getCol().startTimebox();
     }
 
+    private void openWatchOptions() {
+        Intent watch = new Intent(getActivity(), SmartwatchSettings.class);
+        startActivityForResult(watch, WATCH_OPTIONS);
+        animateLeft();
+    }
+
 
     private void addNote() {
         Preferences.COMING_FROM_ADD = true;
@@ -323,6 +333,8 @@ public class StudyOptionsFragment extends Fragment implements LoaderManager.Load
         mCongratsLayout = mStudyOptionsView.findViewById(R.id.studyoptions_congrats_layout);
         mTextCongratsMessage = (TextView) mStudyOptionsView.findViewById(R.id.studyoptions_congrats_message);
 
+        Button watchBut = (Button) mStudyOptionsView.findViewById(R.id.studyoptions_startwatch);
+        watchBut.setOnClickListener(mButtonClickListener);
 
         if (getCol().getDecks().isDyn(getCol().getDecks().selected())) {
             Button rebBut = (Button) mStudyOptionsView.findViewById(R.id.studyoptions_rebuild_cram);

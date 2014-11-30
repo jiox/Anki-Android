@@ -53,10 +53,11 @@ public class NavigationDrawerActivity extends AnkiActivity {
     // Navigation drawer list item entries
     protected static final int DRAWER_DECK_PICKER = 0;
     protected static final int DRAWER_BROWSER = 1;
-    protected static final int DRAWER_STATISTICS = 2;
-    protected static final int DRAWER_SETTINGS = 3;
-    protected static final int DRAWER_HELP = 4;
-    protected static final int DRAWER_FEEDBACK = 5;
+    protected static final int DRAWER_WATCH = 2;
+    protected static final int DRAWER_STATISTICS = 3;
+    protected static final int DRAWER_SETTINGS = 4;
+    protected static final int DRAWER_HELP = 5;
+    protected static final int DRAWER_FEEDBACK = 6;
     // Intent request codes
     public static final int REQUEST_PREFERENCES_UPDATE = 100;
     public static final int REQUEST_BROWSE_CARDS = 101;
@@ -133,6 +134,13 @@ public class NavigationDrawerActivity extends AnkiActivity {
                     }                    
                     startActivityForResultWithAnimation(cardBrowser, REQUEST_BROWSE_CARDS, ActivityTransitionAnimation.LEFT);
                 }
+                break;
+            case DRAWER_WATCH:
+                Intent watchSettings = new Intent(this, SmartwatchSettings.class);
+                if (this instanceof DeckPicker && !mFragmented){
+                    watchSettings.putExtra("fromDeckpicker", true);
+                }
+                startActivityForResultWithAnimation(watchSettings, REQUEST_BROWSE_CARDS, ActivityTransitionAnimation.LEFT);
                 break;
             case DRAWER_STATISTICS:
             	boolean selectAllDecksButton = false;
