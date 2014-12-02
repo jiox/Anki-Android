@@ -14,7 +14,21 @@
         android:id="@+id/seekBar"
         android:layout_gravity="center_horizontal" />
 
-    <CalendarView
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start learning on watch"
+        android:id="@+id/startLearning"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop learning"
+        android:id="@+id/stopLearning"
+        android:layout_gravity="center_horizontal" />
+
+    CalendarView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/calendarView"
