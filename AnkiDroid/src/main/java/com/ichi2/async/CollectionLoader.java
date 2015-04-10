@@ -42,7 +42,7 @@ public class CollectionLoader extends AsyncTaskLoader<Collection> {
     
     @Override
     public void deliverResult(Collection col) {
-        // Loader has been reset so don't forward data to listener
+            // Loader has been reset so don't forward data to listener
         if (isReset()) {
             if (col != null) {
                 return;

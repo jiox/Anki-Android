@@ -49,7 +49,7 @@
     -->
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -213,6 +213,7 @@
             android:label="@string/preview_title" />
 
         <service android:name="com.ichi2.anki.services.NotificationService" />
+        <service android:name="com.ichi2.anki.SmartwatchService" />
 
         <!-- small widget -->
         <receiver

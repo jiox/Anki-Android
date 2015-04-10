@@ -65,7 +65,7 @@
         <item name="android:radioButtonStyle">@style/White.CompoundButton.RadioButton</item>
 
         <!-- Action bar styles -->
-        <item name="actionBarStyle">@style/White.ActionBarStyle</item>
+        <item name="android:actionBarStyle">@style/White.ActionBarStyle</item>
         <item name="android:actionBarStyle" tools:targetApi="11">@style/White.ActionBarStyle</item>
 
         <!-- Dialog styles -->

@@ -85,6 +85,8 @@ public class SmartwatchSettings extends NavigationDrawerActivity {
 
     private void startWatchLearning()
     {
+        startService(new Intent(getApplicationContext(), SmartwatchService.class));
+        /*
         List<Long> cids = mSched.getCol().getDb().queryColumn(Long.class, "select id from cards where did = " + mDeck, 0);
 
         //mSched.sortCards(Utils.toPrimitive(cids), 1, 1, true, false);
@@ -93,6 +95,7 @@ public class SmartwatchSettings extends NavigationDrawerActivity {
         Card card = mCol.getCard(cids.get(0));
         Log.i("question", card._getQA().get("q"));
         Log.i("answer", card.getPureAnswerForReading());
+        */
     }
 
     private void initLayout()
